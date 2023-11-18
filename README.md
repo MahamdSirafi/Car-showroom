@@ -54,6 +54,7 @@ Here are some examples:
 
 NODE_ENV=development
 PORT=3000
+
 DATABASE_LOCAL=mongodb://127.0.0.1:27017/car
 
 ## Technologies Used
