@@ -53,6 +53,7 @@ This guide explains how to set up an `.env` file to configure environment variab
 Here are some examples:
 
 NODE_ENV=development
+
 PORT=3000
 
 DATABASE_LOCAL=mongodb://127.0.0.1:27017/car
