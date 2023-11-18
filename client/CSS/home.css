@@ -1,0 +1,294 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+
+
+  
+
+
+/* ===================== Intro ======================== */
+#intro-one-div {
+  position: relative;
+}
+#intro-one-div img {
+  width: 100%;
+  height: 350px;
+}
+
+#intro-one-div .parag1 {
+  position: absolute;
+  color: white;
+  left: 10px;
+  top: 120px;
+  font-family: "Caveat";
+  font-weight: bold;
+  font-size: 50px;
+}
+
+#intro-one-div .parag2 {
+  position: absolute;
+  color: white;
+  left: 10px;
+  top: 170px;
+  font-family: "Caveat";
+  font-weight: bold;
+  font-size: 75px;
+}
+#intro-one-div .parag3 {
+  position: absolute;
+  color: white;
+  left: 10px;
+  top: 250px;
+  font-family: "Caveat";
+  font-weight: bold;
+  font-size: 28px;
+}
+@media (max-width: 834px) {
+  #intro-one-div .parag2 {
+    font-size: 40px;
+  }
+  #intro-one-div .parag1 {
+    font-size: 25px;
+    
+  }
+
+  #intro-one-div .parag3{
+    font-size: 20px;
+  }
+}
+@media (max-width: 466px) {
+  #intro-one-div .parag2 {
+    font-size: 20px;
+  }
+  #intro-one-div .parag1 {
+    font-size: 15px;
+    
+  }
+
+  #intro-one-div .parag3{
+    font-size: 10px;
+  }
+}
+#intro-one-div a {
+  position: absolute;
+  color: white;
+  left: 10px;
+  bottom: 20px;
+  font-weight: bold;
+  font-size: 15px;
+  text-decoration: none;
+  background-color: #c91414;
+  border-radius: 7px;
+  padding: 15px;
+  padding-right: 0px;
+  overflow: hidden;
+  transition: 0.5s all;
+  opacity: 0.7;
+}
+#intro-one-div a:hover {
+  opacity: 1;
+  border-radius: 100px;
+}
+#intro-one-div a span {
+  font-family: "Bauhaus 93";
+  padding: 17px;
+  padding-bottom: 18px;
+  margin-left: 30px;
+  background-color: #9b1010;
+}
+
+
+#intro-two-div {
+  text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+#intro-two-div p {
+  font-weight: bold;
+}
+#intro-two-div .parag1 {
+  font-size: 30px;
+}
+#intro-two-div .parag2 {
+  font-size: 50px;
+  color:#c91414 ;
+}
+#intro-two-div .parag2 span {
+  font-size: 50px;
+  color: black ;
+}
+
+
+/* ============================== Cars Markets ======================== */
+.market-container-div {
+  width: 100%;
+  
+  display: grid;
+  /* grid-template-columns: repeat(2, 1fr); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 0px 100px 50px 100px;
+}
+.market-div {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 350px;
+  transition: 0.2s all;
+}
+.market-div img {
+  width: 100%;
+  height: 100%;
+}
+.market-div p {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 30px;
+}
+.market-div a {
+  position: absolute;
+  bottom: 20px;
+  left: 30px;
+  text-decoration: none;
+  background-color: #c91414;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  border-radius: 7px;
+  padding: 5px 20px;
+  transition: 0.5s all;
+  opacity: 0.7;
+}
+.market-div a:hover {
+  opacity: 1;
+  border-radius: 100px;
+}
+#lamborghini-parg {
+  top: 80px
+}
+.market-hover-div {
+  opacity: 0;
+  background-color: #22222269;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: 0.5s all;
+}
+.market-div div:hover {
+  opacity: 1;
+}
+.market-div:hover {
+  transform: translateY(10px);
+}
+
+
+
+
+
+/* =================================== Products ================================== */
+.title {
+  background-image: linear-gradient(to bottom, #eeeeee, #222222);
+  width: 100%;
+  height: 50px;
+  color: #ffffff;
+  text-align: center;
+  font-family: "Arial";
+  font-weight: bold;
+  font-style: italic;
+  font-size: 30px;
+  padding-top: 10px;
+  border-bottom: 5px solid #c91414; 
+  margin-bottom: 20px;
+}
+.products-div {
+  background-image: linear-gradient(to bottom, white, #eeeeee);
+  /* border-radius: 0px 0px 50px 50px; */
+}
+.product-container-div {
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr); */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 50px;
+  padding: 20px 40px 50px 40px;
+}
+.product-div {
+  width: 275px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  border-bottom: 2px solid #9b1010;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.3s all;
+}
+.product-div:hover {
+  transform: scaleY(1.1);
+}
+.product-div img {
+  width:100%;
+  height: 100%;
+}
+.model {
+  background-image: linear-gradient(to right, #222222, #c91414);
+  font-family: "Caveat" ;
+  font-weight: bold;
+  font-size: 30px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+.description {
+  font-size: 18px;
+}
+.price {
+  color: #c91414;
+  font-size: 24px;
+  font-family: "Caveat";
+  font-weight: bold;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================== Our Partners ====================== */
+
+
+
+
+
+

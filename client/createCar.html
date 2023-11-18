@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>create car</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <div class="login">
+      <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <form class="createform">
+        <!-- <button id="close-btn" type="button">x</button> -->
+        <p>Adding New Car :</p>
+        <input
+          type="text"
+          class="inputs"
+          id="brand"
+          required
+          placeholder="Enter The Brand:"
+          oninvalid="this.setCustomValidity('Please Enter The Brabd :')"
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="model"
+          required
+          placeholder="Enter The Model:"
+          oninvalid="this.setCustomValidity('Please Enter The Model :')"
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="color"
+          required
+          oninvalid="this.setCustomValidity('Please Enter The Color :')"
+          placeholder="Enter The Color:"
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="enginename"
+          required
+          placeholder="Enter The Engine Name:"
+          oninvalid="this.setCustomValidity('Please Enter The Engine Name :')"
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="enginecapacity"
+          required
+          placeholder="Enter The Engine Capacity:"
+          oninvalid="this.setCustomValidity('Please Enter The Engine Capacity :')"
+        />
+        <input
+          type="text"
+          id="price"
+          class="inputs"
+          required
+          oninvalid="this.setCustomValidity('Please Enter The Price :')"
+          placeholder="Enter The Price:"
+        />
+        <input
+          type="date"
+          id="createdAt"
+          class="inputs"
+          required
+          oninvalid="this.setCustomValidity('Please Enter The CreatedAt :')"
+          placeholder="Enter The CreatedAt:"
+        />
+        <label class="add-image-title" for="photo">Upload your images </label>
+        <input type="file" id="photo" />
+        <button id="btn-sumbit" type="submit">Save</button>
+      </form>
+    </div>
+
+    <script>
+      let form = document.querySelector(".createform");
+      form.addEventListener("submit", () => {
+        event.preventDefault();
+        let data = {
+          brand: document.getElementById("brand").value,
+          model: document.getElementById("model").value,
+          engine: {
+            name: document.getElementById("enginename").value,
+            capacity: document.getElementById("enginecapacity").value,
+          },
+          createdAt: document.getElementById("createdAt").value,
+          color: document.getElementById("color").value,
+          price: document.getElementById("price").value,
+          photo:
+            "./Images/products/" +
+            String(document.getElementById("photo").value).split("\\")[2],
+        };
+        // console.log(data.photo);
+        try {
+        fetch("http://localhost:3000/api/v1.0.0/car", {
+        method: "POST",
+        mode: "cors",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+        "Content-Type": "application/json",
+              },
+              redirect: "follow",
+              referrerPolicy: "no-referrer",
+              body: JSON.stringify(data),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.status == "success") {
+                  alert("success");
+                  window.location.href = "./Dashboard.html";
+                } else {
+                  alert(data.message);
+                }
+              });
+          } catch (err) {
+            console.log(err);
+          }
+      });
+    </script>
+  </body>
+</html>

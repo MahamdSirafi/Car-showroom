@@ -1,0 +1,362 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+}
+header {
+  width: 100%;
+}
+a {
+  text-decoration: none;
+}
+
+nav {
+  font-family: "Bauhaus 93";
+  position: fixed;
+  z-index: 10;
+  padding-top: 10px;
+  background-color: rgb(12, 0, 0, 0.92);
+  width: 100%;
+  height: 75px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid rgb(226, 11, 11);
+}
+.logo {
+  color: white;
+  text-decoration: none;
+  padding-left: 5px;
+  font-size: 30px;
+  font-style: italic;
+}
+.mnue {
+  position: absolute;
+  top: 20px;
+  right: 7px;
+}
+
+@media (min-width: 768px) {
+  .mnue {
+    display: none;
+  }
+}
+nav a span {
+  color: red;
+}
+@media (min-width: 767px) {
+  ul {
+    padding-right: 10px;
+    list-style: none;
+    display: flex;
+  }
+}
+
+@media (max-width: 767px) {
+  ul {
+    display: none;
+  }
+}
+ul li a {
+  display: block;
+  padding-left: 10px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+@media (max-width: 767px) {
+  ul li a {
+    padding: 10px !important;
+  }
+}
+ul li a:hover {
+  color: red;
+}
+footer {
+  background-color: rgb(0, 4, 14);
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  color: white;
+}
+#our-partners-div h3 {
+  width: 100%;
+  height: 50px;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 34px;
+  background: linear-gradient(to bottom, #ffffff, #182848);
+  -webkit-text-fill-color: transparent;
+}
+
+#our-partners-div img {
+  width: 100%;
+  border-bottom: #f80505 solid 2px;
+}
+.model h2 {
+  color: rgb(197, 173, 173);
+  background-color: white;
+}
+.first {
+  display: flex;
+  border-bottom: 2px red solid;
+  justify-content: space-between;
+}
+.first h3 {
+  margin: 10px 0;
+  font-style: italic;
+}
+.first h4 {
+  margin: 10px 0;
+}
+.first p {
+  margin: 5px;
+}
+.flex {
+  display: flex;
+  justify-content: space-around;
+}
+.flex div span {
+  color: red;
+}
+@media (max-width: 800px) {
+  .first {
+    display: block;
+  }
+  .FOLLOW {
+    display: none;
+  }
+}
+.scconed {
+  font-size: 7px;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.scconed div {
+  margin-left: 5px;
+  padding-top: 5px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.scconed div h2 {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+.scconed div span {
+  color: red;
+}
+
+.payment {
+  margin: 5px;
+  width: 30%;
+  height: 100%;
+  background-image: url(../Images/icon/payment.png);
+  background-size: 100% 100%;
+}
+
+/* log in */
+.login {
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 700px;
+  position: relative;
+  background: linear-gradient(rgb(78, 5, 5), #240101, #e21010, #3b1313);
+}
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.background {
+  width: 400px;
+  height: 520px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  top: 50%;
+}
+.background .shape {
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+}
+.shape:first-child {
+  background-image: url(../Images/Home/BMW\ Group.jpg);
+  background-size: cover;
+  left: -80px;
+  top: -80px;
+  /* background: linear-gradient(
+        #1845ad,
+        #23a2f6 
+    );*/
+}
+.shape:last-child {
+  background-image: url(../Images/Home/Audi\ Group.jpg);
+  background-size: cover;
+  /* background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819 
+    );*/
+  right: -30px;
+  bottom: -80px;
+}
+form {
+  overflow: scroll;
+  height: 550px;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.13);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+  padding: 50px 35px;
+}
+form::-webkit-scrollbar {
+  /* background-color: #e21010; */
+  width: 12px;
+  background: transparent;
+}
+
+form::-webkit-scrollbar-thumb {
+  background-color: #890c0c;
+  border-radius: 6px;
+}
+@media (max-width: 400px) {
+  form {
+    width: 100%;
+    height: 600px;
+  }
+  .social {
+    width: 100%;
+  }
+  .social div {
+    width: 80%;
+    margin: 20px auto;
+  }
+}
+@media (min-width: 400px) {
+  .social {
+    display: flex;
+  }
+}
+
+form * {
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  outline: none;
+  border: none;
+}
+form h3 {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 500;
+}
+input {
+  display: block;
+  height: 50px;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+}
+::placeholder {
+  color: #e5e5e5;
+}
+button {
+  margin-top: 50px;
+  width: 100%;
+  background-color: #ffffff;
+  color: #080710;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button a {
+  color: #000000;
+}
+
+.social {
+  /* display: flex; */
+  text-align: center;
+  align-items: center;
+  margin-top: 30px;
+  height: 100px;
+}
+.social div {
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  margin-left: 20px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255, 255, 255, 0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover {
+  background-color: rgba(255, 255, 255, 0.47);
+}
+.social .back {
+  margin: 10px auto;
+}
+.social .error {
+  margin: 10px auto;
+}
+.logoC {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 300px;
+  display: flex;
+  z-index: 100;
+}
+.logoMas {
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+  background-image: url(../Images/MASlogo.jpg);
+  background-size: 100% 100%;
+  border-radius: 52%;
+  transition: 0.3s all;
+  /* border: rgb(223, 219, 21) solid 1px; */
+}
+.logoMas:hover {
+  transform: scale(3);
+  border: #777 solid 1px;
+  box-shadow: 3px 3px 3px red, -3px -3px 3px red, -3px 3px 3px red,
+    3px -3px 3px red;
+}

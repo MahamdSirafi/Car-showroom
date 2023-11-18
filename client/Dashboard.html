@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/Dashboard style.css" />
+  </head>
+
+  <body>
+    <nav>
+      <a class="logo" href="#"><span>tu</span>rbo store</a
+      ><i class="mnue"><img src="./Images/icon/icons8_list_48px.png" /></i>
+      <ul>
+        <li><a class="DashBoard" href="./login.html">DashBoard</a></li>
+        <li><a href="./aboutus.html">About us</a></li>
+        <li><a href="./home.html">Home</a></li>
+      </ul>
+    </nav>
+    <div id="image-overlay">
+      <p id="main-title" class="title-bg">Administrator Control</p>
+      <p id="second-title" class="title-bg">Dashboard</p>
+      <a href="#" id="shopping-btn">Shopping now<span id="arrow">>></span></a>
+    </div>
+
+    <!-- VisiTors Main  Board -->
+    <div id="visitors-headline">
+      <img src="./Images/icon/Visitor-icon.png" id="visitors-img" />
+      <h3 id="visitors-title">Visitors</h3>
+    </div>
+
+    <div id="visitors-mainboard">
+      <div class="total-visitors">
+        <div class="visitos-article">
+          <p class="visitor-time">Hour:</p>
+          <p class="counter-of-visitors">10</p>
+        </div>
+        <div class="visitos-article">
+          <p class="visitor-time">Day:</p>
+          <p class="counter-of-visitors">1000</p>
+        </div>
+      </div>
+      <div class="total-visitors">
+        <div class="visitos-article">
+          <p class="visitor-time">Week:</p>
+          <p class="counter-of-visitors">9000</p>
+        </div>
+        <div class="visitos-article">
+          <p class="visitor-time">Month:</p>
+          <p class="counter-of-visitors">100604</p>
+        </div>
+      </div>
+
+      <div id="visitors-in-year">
+        <p class="visitor-time">Year:</p>
+        <p class="counter-of-visitors">200000</p>
+      </div>
+
+      <!-- VisiTors Main  Board -->
+    </div>
+    <div class="product-board"></div>
+
+    <!--                                        -->
+
+    <div id="add-product-btn">
+      <div id="add-icon">
+        <a href="./createCar.html" id="add-btn">+</a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="model">
+        <div id="our-partners-div">
+          <h3>Our Partners</h3>
+          <img src="./Images/icon/Our partners.png" alt="our partners" />
+        </div>
+      </div>
+      <div class="first">
+        <div>
+          <h3>CONTCT US</h3>
+          <div class="flex">
+            <a href="#"><img src="./Images/icon/icon-phone.png" /></a>
+            <div>
+              <h4>HOT Line free Server:</h4>
+              <span>TurboStore@gmail.com</span>
+            </div>
+          </div>
+          <p>We are a team of designers that</p>
+          <p>create high quality HTML,CSS,JavaScript</p>
+        </div>
+        <div class="FOLLOW">
+          <h3>FOLLOW US</h3>
+          <ul>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/youtube-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/Twitter-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/facebook-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/instagram-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/Linked-in-icon.png"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="scconed flex">
+        <div>
+          &copy;2023
+          <h2><span>tr</span>bo store</h2>
+          Made With By TEAM
+        </div>
+        <div class="payment"></div>
+      </div>
+    </footer>
+
+    <script src="./JS/Dashboard.js"></script>
+    <script src="./JS/control.js"></script>
+    <script>
+      let product = document.querySelector(".product-board");
+      // console.log(product);
+      try {
+        fetch(`http://localhost:3000/api/v1.0.0/car`)
+          .then((response) => response.json())
+          .then((data) => {
+            console.log(data);
+            if (data.status == "success") {
+              let devProduct;
+              data.doc.forEach((item) => {
+                devProduct = document.createElement("div");
+                devProduct.innerHTML = `<div class="product">
+              <div>
+              <img src="${item.photo}" width="100%"/>
+              </div>
+              <div class="description">
+                <p class="description-details">Model: ${item.brand} ${
+                  item.model
+                } ${new Date(item.createdAt).getFullYear()}</p>
+                <p class="description-details">Color:${item.color}</p>
+                <p class="description-details">Engine name: ${
+                  item.engine.name
+                }</p>
+                <p class="description-details">Engine capacity: ${
+                  item.engine.capacity
+                }</p>
+                <p class="description-details">Transmission: ${
+                  item.transmission
+                }</p>
+                <p class="price">Price:${item.price}$</p>
+              </div>
+
+              <div class="product-hover">
+                <div class="control-btn">
+                  <img
+                    class="delete-icon"
+                    src="./Images/icon/Delete-icon.png"
+                    width="100%"
+                  data-id="${item._id}"/>
+                </div>
+                <div class="control-btn">
+                  <img
+                    class="edit-icon"
+                    src="./Images/icon/Edit-Icon.png"
+                    width="100%"
+                    data-id="${item._id}"/>
+                </div>
+              </div>
+            </div>
+      `;
+                // product.appendChiled(devProduct);
+                product.append(devProduct);
+              });
+            } else {
+              alert(data.messag);
+            }
+          });
+      } catch (err) {
+        console.log(err);
+      }
+      //delete
+      document.addEventListener("click", (elem) => {
+        console.log(elem.target.className);
+        if (elem.target.className === "delete-icon") {
+          const Idcar = elem.target.getAttribute("data-id");
+          // console.log(Idcar);
+          fetch(`http://localhost:3000/api/v1.0.0/car/${Idcar}`, {
+            method: "DELETE",
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.status == "success") {
+                alert("delete car success");
+                window.location.href = "./Dashboard.html";
+              } else {
+                alert(data.messag);
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+      });
+      //get One
+      document.addEventListener("click", (elem) => {
+        console.log(elem.target.className);
+        if (elem.target.className === "edit-icon") {
+          const Idcar = elem.target.getAttribute("data-id");
+          // console.log(Idcar);
+          fetch(`http://localhost:3000/api/v1.0.0/car/${Idcar}`, {
+            method: "GET",
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.status == "success") {
+                document.body.innerHTML = `<div class="login">
+      <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <form class="updateform">
+        <p>update this Car :</p>
+        <input
+          type="text"
+          class="inputs"
+          id="brand"
+          required
+          value="${data.doc.brand}"
+          placeholder="Enter The Brand:"
+          oninvalid="this.setCustomValidity('Please Enter The Brabd :')"
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="model"
+          value="${data.doc.model}"
+          required
+          placeholder="Enter The Model:"
+          oninvalid="this.setCustomValidity('Please Enter The Model :')"
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="color"
+          value="${data.doc.color}"
+          required
+          oninvalid="this.setCustomValidity('Please Enter The Color :')"
+          placeholder="Enter The Color:"
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="enginename"
+          value="${data.doc.engine.name}"
+          required
+          placeholder="Enter The Engine Name:"
+          oninvalid="this.setCustomValidity('Please Enter The Engine Name :')"
+        />
+        <input
+          type="text"
+          class="inputs"
+          id="enginecapacity"
+          value="${data.doc.engine.capacity}"
+          required
+          placeholder="Enter The Engine Capacity:"
+          oninvalid="this.setCustomValidity('Please Enter The Engine Capacity :')"
+        />
+        <input
+          type="text"
+          id="price"
+          class="inputs"
+          value="${data.doc.price}"
+          required
+          oninvalid="this.setCustomValidity('Please Enter The Price :')"
+          placeholder="Enter The Price:"
+        />
+        <input
+          type="date"
+          id="createdAt"
+          class="inputs"
+          value="${data.doc.createdAt.split("T")[0]}"
+          required
+          oninvalid="this.setCustomValidity('Please Enter The createdAt :')"
+          placeholder="Enter The CreatedAt:"
+        />
+        <input type="text" value="${
+          data.doc.photo
+        }" id="text" style="display:none" />
+        <input type="file" id="photo" />
+        <button id="btn-sumbit" type="submit" >Save</button>
+      </form></div>`;
+                updateCar(Idcar);
+              } else {
+                alert(data.messag);
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+      });
+      //update
+      function updateCar(Idcar) {
+        let form = document.querySelector(".updateform");
+        form.addEventListener("submit", () => {
+          event.preventDefault();
+          let data = {
+            brand: document.getElementById("brand").value,
+            model: document.getElementById("model").value,
+            engine: {
+              name: document.getElementById("enginename").value,
+              capacity: document.getElementById("enginecapacity").value,
+            },
+            createdAt: document.getElementById("createdAt").value,
+            color: document.getElementById("color").value,
+            price: document.getElementById("price").value,
+            photo: !document.getElementById("photo").value
+              ? document.getElementById("text").value
+              : "./Images/products/" +
+                String(document.getElementById("photo").value).split("\\")[2],
+          };
+          // console.log(data);
+          // console.log(data.photo);
+          try {
+            fetch(`http://localhost:3000/api/v1.0.0/car/${Idcar}`, {
+              method: "PATCH",
+              mode: "cors",
+              cache: "no-cache",
+              credentials: "same-origin",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              redirect: "follow",
+              referrerPolicy: "no-referrer",
+              body: JSON.stringify(data),
+            })
+              .then((response) => response.json())
+              .then((data) => {
+                if (data.status == "success") {
+                  alert("success");
+                  window.location.href = "./Dashboard.html";
+                } else {
+                  alert(data.message);
+                }
+              });
+          } catch (err) {
+            console.log(err);
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

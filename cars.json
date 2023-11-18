@@ -1,0 +1,222 @@
+[{
+  "_id": {
+    "$oid": "64fc8e47abcb6e7c7c495251"
+  },
+  "model": "FR12",
+  "brand": "BMW",
+  "color": "Blue",
+  "engine": {
+    "name": "xx16",
+    "capacity": 30
+  },
+  "transmission": "automatic",
+  "photo": "./Images/products/Audi1.jpg",
+  "price": 20000,
+  "createdAt": {
+    "$date": "2021-02-28T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "64fc8e8fe855ea127d123f31"
+  },
+  "model": "s16",
+  "brand": "BMW",
+  "color": "black",
+  "engine": {
+    "name": "xx16",
+    "capacity": 30
+  },
+  "transmission": "automatic",
+  "photo": "./Images/products/BMW1.jpg",
+  "price": 20000,
+  "createdAt": {
+    "$date": "2021-02-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "64fc8fac91173f29edffa99b"
+  },
+  "model": "s20",
+  "brand": "BMW",
+  "color": "Blue",
+  "engine": {
+    "name": "xxx16",
+    "capacity": 40
+  },
+  "transmission": "manual",
+  "photo": "./Images/products/BMW2.jpg",
+  "price": 30000,
+  "createdAt": {
+    "$date": "2023-02-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "64fdb5d5493d243326e1eb76"
+  },
+  "model": "AUDI",
+  "brand": "Mersedecse",
+  "color": "White",
+  "engine": {
+    "name": "xxx16",
+    "capacity": 40
+  },
+  "transmission": "manual",
+  "photo": "./Images/products/AudiProduct13.jpg",
+  "price": 20000,
+  "createdAt": {
+    "$date": "2018-02-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "650c754f8bb8b043c5f455a9"
+  },
+  "model": "DTR2",
+  "brand": "AUDI",
+  "color": "black",
+  "engine": {
+    "name": "xx16turpo",
+    "capacity": 40
+  },
+  "transmission": "automatic",
+  "photo": "./Images/products/AudiProduct15.jpg",
+  "price": 10000,
+  "createdAt": {
+    "$date": "2009-02-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "650c76ee8bb8b043c5f455ab"
+  },
+  "model": "benz",
+  "brand": "Mersedecse",
+  "color": "White",
+  "engine": {
+    "name": "wq22",
+    "capacity": 35
+  },
+  "transmission": "automatic",
+  "photo": "./Images/products/Mercedes4.jpg",
+  "price": 20000,
+  "createdAt": {
+    "$date": "2023-02-28T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "650c778e8bb8b043c5f455ac"
+  },
+  "model": "CX4",
+  "brand": "AUDI",
+  "color": "White",
+  "engine": {
+    "name": "rx16",
+    "capacity": 30
+  },
+  "transmission": "automatic",
+  "photo": "./Images/products/AudiProduct2.jpg",
+  "price": 15000,
+  "createdAt": {
+    "$date": "2021-02-28T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "65108db953903774f7247d02"
+  },
+  "model": "s20",
+  "brand": "BMW",
+  "color": "Silver",
+  "engine": {
+    "name": "xxx16",
+    "capacity": 40
+  },
+  "transmission": "manual",
+  "photo": "./Images/products/BMW4.jpg",
+  "price": 30000,
+  "createdAt": {
+    "$date": "2022-02-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "65146a0c11da92ff03d463fc"
+  },
+  "model": "w20",
+  "brand": "Mersedecse",
+  "color": "Green",
+  "engine": {
+    "name": "Ex16",
+    "capacity": 50
+  },
+  "transmission": "manual",
+  "photo": "./Images/products/Mercedes1.jpg",
+  "price": 25000,
+  "createdAt": {
+    "$date": "2022-02-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "651ae786cccf2ada01e30690"
+  },
+  "model": "QS3",
+  "brand": "Lamborghini",
+  "color": "Red",
+  "engine": {
+    "name": "xx16turpo",
+    "capacity": 40
+  },
+  "transmission": "manual",
+  "photo": "./Images/products/Lamborghini2.jpg",
+  "price": 10000,
+  "createdAt": {
+    "$date": "2009-02-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "651ae7f5cccf2ada01e30694"
+  },
+  "model": "s16",
+  "brand": "Audi",
+  "color": "black",
+  "engine": {
+    "name": "xx16",
+    "capacity": 30
+  },
+  "transmission": "manual",
+  "photo": "./Images/products/AudiProduct11.jpg",
+  "price": 25000,
+  "createdAt": {
+    "$date": "2021-02-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "651c467f3b687379c544dcac"
+  },
+  "model": "gtr",
+  "brand": "Lamborghini",
+  "color": "White",
+  "engine": {
+    "name": "xx16turpo",
+    "capacity": 40
+  },
+  "transmission": "manual",
+  "photo": "./Images/products/Lamborghini4.jpg",
+  "price": 60000,
+  "createdAt": {
+    "$date": "2023-12-01T00:00:00.000Z"
+  }
+},{
+  "_id": {
+    "$oid": "651c4d2d3b687379c544dcd6"
+  },
+  "model": "sw12",
+  "brand": "Lamborghini",
+  "color": "Green",
+  "engine": {
+    "name": "ssw22",
+    "capacity": 30
+  },
+  "transmission": "manual",
+  "photo": "./Images/products/Lamborghini3.jpg",
+  "price": 65000,
+  "createdAt": {
+    "$date": "2023-09-26T00:00:00.000Z"
+  }
+}]

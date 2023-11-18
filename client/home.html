@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="This cars store" />
+    <title>Turbo Store</title>
+
+    <link rel="stylesheet" href="./CSS/home.css" />
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
+  <body>
+    <!-- ----------- Header ----------------- -->
+    <nav>
+      <a class="logo" href="#"><span>tu</span>rbo store</a
+      ><i class="mnue"><img src="./Images/icon/icons8_list_48px.png" /></i>
+      <ul>
+        <li><a class="DashBoard" href="./login.html">DashBoard</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </nav>
+
+    <!-- ----------- Intrro ----------------- -->
+    <div id="intro-one-div">
+      <img src="./Images/Home/Home-bg.jpg" alt="Intro image" />
+      <p class="parag1">BIG SALE OFF</p>
+      <p class="parag2">LUXURY SPORT CARS</p>
+      <p class="parag3">EXCLUSIVE OFFER - 99% THIS WEEK</p>
+      <a href="#cars-markets">SHOPPING NOW<span>>></span></a>
+    </div>
+
+    <div id="intro-two-div">
+      <p class="parag1">Welcome to turbo store</p>
+      <p class="parag2"><span>CUSTOM</span> SHOPPING STORE INLINE</p>
+    </div>
+    <!-- ------------------------- Cars Markets --------------------------- -->
+    <div class="products-div" id="cars-markets">
+      <div class="market-container-div">
+        <div class="market-div">
+          <img src="./Images/products//Lamborghini4.jpg" alt="bmw" />
+          <div class="market-hover-div">
+            <p>All GROUP</p>
+            <a data-brand=" ">Explore</a>
+          </div>
+        </div>
+      <div class="market-container-div">
+        <div class="market-div">
+          <img src="./Images/Home/BMW Group.jpg" alt="bmw" />
+          <div class="market-hover-div">
+            <p>BMW GROUP</p>
+            <a data-brand="bmw">Explore</a>
+          </div>
+        </div>
+        <div class="market-div">
+          <img src="./Images/Home/Mercedes  Group.jpg" alt="mersedecse" />
+          <div class="market-hover-div">
+            <p>MERSEDECSE GROUP</p>
+            <a data-brand="mersedecse">Explore</a>
+          </div>
+        </div>
+        <div class="market-div">
+          <img src="./Images/Home/Audi Group.jpg" alt="audi" />
+          <div class="market-hover-div">
+            <p>AUDI GROUP</p>
+            <a data-brand="audi">Explore</a>
+          </div>
+        </div>
+        <div class="market-div">
+          <img src="./Images/Home/Lamborghini Group.jpg" alt="lamborghini" />
+          <div class="market-hover-div">
+            <p id="lamborghini-parg">LAMBORGHINI GROUP</p>
+            <a data-brand="lamborghini">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ---------------------------- Products --------------------------- -->
+    <div class="products-div" id="bmw-div">
+      <h3 class="title">Products</h3>
+      <div class="product-container-div"></div>
+    </div>
+    <footer>
+      <div class="model">
+        <div id="our-partners-div">
+          <h3>Our Partners</h3>
+          <img src="./Images/icon/Our partners.png" alt="our partners" />
+        </div>
+      </div>
+      <div class="first">
+        <div>
+          <h3>CONTCT US</h3>
+          <div class="flex">
+            <a href="#"><img src="./Images/icon/icon-phone.png" /></a>
+            <div>
+              <h4>HOT Line free Server:</h4>
+              <span>TurboStore@gmail.com</span>
+            </div>
+          </div>
+          <p>We are a team of designers that</p>
+          <p>create high quality HTML,CSS,JavaScript</p>
+        </div>
+        <div class="FOLLOW">
+          <h3>FOLLOW US</h3>
+          <ul>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/youtube-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/Twitter-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/facebook-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/instagram-icon.png"
+              /></a>
+            </li>
+            <li>
+              <a href="#"
+                ><img width="100%" src="./Images/icon/Linked-in-icon.png"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="scconed flex">
+        <div class="copy">
+          &copy;2023
+          <h2><span>tr</span>bo store</h2>
+          Made With By TEAM
+        </div>
+        <div class="payment"></div>
+      </div>
+    </footer>
+    <script src="./JS/control.js" type="module"></script>
+    <script>
+      let url = "http://localhost:3000/api/v1.0.0/car";
+      document.addEventListener("click", (event) => {
+        if (event.target.dataset.brand) {
+          event.preventDefault();
+          url = `http://localhost:3000/api/v1.0.0/car?search=${event.target.getAttribute(
+            "data-brand"
+          )}`;
+          
+        }
+      });
+      let product = document.querySelector(".product-container-div");
+      let arr = [];
+      let Array1, Array2, devProduct;
+      function fetchGetAllCar(url) {
+        try {
+          fetch(url)
+            .then((response) => response.json())
+            .then((data) => {
+              // console.log(data.doc);
+              if (data.status == "success") {
+                Array1 = JSON.stringify(arr);
+                Array2 = JSON.stringify(data.doc);
+                if (Array1 !== Array2) {
+                  product.innerHTML = "";
+                  data.doc.forEach((item) => {
+                    devProduct = document.createElement("div");
+                    devProduct.innerHTML = `<div class="product-div">
+              <div>
+                <img src="${item.photo}" />
+              </div>
+              <div class="description-div">
+                <p class="model">Model: ${item.brand} ${item.model} ${new Date(
+                      item.createdAt
+                    ).getFullYear()}</p>
+                <p class="description">Color: ${item.color}</p>
+                <p class="description">Engine name: ${item.engine.name}</p>
+                <p class="description">Engine capacity: ${
+                  item.engine.capacity
+                }</p>
+                <p class="description">Transmission: ${item.transmission}</p>
+                <p class="price">Price: ${item.price}$</p>
+              </div>
+            </div>`;
+                    product.append(devProduct);
+                  });
+                }
+              } else {
+                alert(data.messag);
+              }
+            });
+        } catch (err) {
+          console.log(err);
+        }
+      }
+      setInterval(function () {
+        fetchGetAllCar(url);
+      }, 1000);
+    </script>
+  </body>
+</html>

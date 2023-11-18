@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>log in</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='./CSS/style.css'>
+    
+</head>
+<body>
+    <div class="login">
+        <div class='background'>
+            <div class='shape'></div>
+            <div class='shape'></div>
+        </div>
+        <form class="formlogin">
+            <h3>Login Here</h3>
+            <label for='username'>Username</label>
+            <input  type='text' placeholder='Email or Phone' id='username'>
+            <label for='password'>Password</label>
+            <input  type='password' placeholder='Password' id='password'>
+            <button>Login </button>
+            <div class='social'>
+                <div class='error'> Facebook </div>
+                <div class='back'>  Gogel</div>
+            </div>
+            <script>
+               let form=document.querySelector(".formlogin");
+               form.addEventListener("submit",() => {
+        event.preventDefault();
+        if(document.getElementById("username").value=="mas" && document.getElementById("password").value=="0000")
+        {
+            window.location.href="./Dashboard.html";
+        }
+        else{alert("error in User Name or Password")} 
+    }
+          )
+            </script>
+</body>
+</html>
